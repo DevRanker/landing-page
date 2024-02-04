@@ -35,21 +35,25 @@ interface ISearchProps {
 	handleSearchLogin: (login?: string) => void;
 }
 
-export default function SearchComponent({
-	handleSearchLogin,
-}: ISearchProps): JSX.Element {
+export default function SearchComponent(
+	{
+		// 	handleSearchLogin,
+		// }: ISearchProps): JSX.Element {
+	}
+): JSX.Element {
 	const {
 		handleSubmit,
 		register,
 		formState: { errors, isSubmitting },
 	} = useForm({ resolver: yupResolver(validationSchema), mode: 'onTouched' });
 
-	const onSubmit = ({ login }: FormType) =>
-		new Promise(() => setTimeout(() => handleSearchLogin(login), 500));
+	// const onSubmit = ({ login }: FormType) =>
+	// 	new Promise(() => setTimeout(() => handleSearchLogin(login), 500));
 
 	return (
 		<MotionBox w="full">
-			<form onSubmit={handleSubmit(onSubmit)}>
+			{/* <form onSubmit={handleSubmit(onSubmit)}> */}
+			<form>
 				<HStack spacing="2" w="full" alignItems="flex-start" py="2">
 					<FormControl isInvalid={!!errors.login}>
 						<InputGroup size="lg" variant="outline" borderColor="gray.600">
@@ -71,7 +75,7 @@ export default function SearchComponent({
 							/>
 						</InputGroup>
 						{!errors.login ? (
-							<FormHelperText>
+							<FormHelperText className="text-center">
 								Insert a valid GitHub Profile to get the data
 							</FormHelperText>
 						) : (

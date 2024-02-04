@@ -22,34 +22,32 @@
 			"automerge": true
 		},
 		{
-      "extends": "monorepo:nextjs",
-      "groupName": "nextjs monorepo"
-    },
+			"extends": "monorepo:nextjs",
+			"groupName": "nextjs monorepo"
+		},
 		{
-      "extends": "monorepo:chakra-ui",
-      "groupName": "chakra-ui monorepo"
-    },
+			"extends": "monorepo:chakra-ui",
+			"groupName": "chakra-ui monorepo"
+		},
 		{
-      "extends": "monorepo:emotion",
-      "groupName": "emotion monorepo"
-    },
+			"extends": "monorepo:emotion",
+			"groupName": "emotion monorepo"
+		},
 		{
-      "extends": "packages:linters",
-      "groupName": "linters"
-    },
+			"extends": "packages:linters",
+			"groupName": "linters"
+		},
 		{
-      "extends": "packages:test",
-      "groupName": "test packages"
-    },
+			"extends": "packages:test",
+			"groupName": "test packages"
+		},
 		{
-      "extends": "monorepo:typescript-eslint",
-      "groupName": "typescript-eslint monorepo"
-    },
+			"extends": "monorepo:typescript-eslint",
+			"groupName": "typescript-eslint monorepo"
+		},
 		{
-      "groupName": "definitelyTyped",
-      "matchPackagePrefixes": [
-        "@types/"
-      ]
-    }
+			"groupName": "definitelyTyped",
+			"matchPackagePrefixes": ["@types/"]
+		}
 	]
 }
