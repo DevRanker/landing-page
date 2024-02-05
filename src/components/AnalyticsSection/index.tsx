@@ -8,7 +8,7 @@ const AnalyticsSection = (props: Props) => {
 	return (
 		<div className="flex gap-16">
 			<div className="flex items-center gap-3">
-				<div className="px-3 py-3 rounded-md bg-white/10">
+				<div className="px-3 py-3 rounded-md bg-purple-600/50">
 					<FaStar size={32} />
 				</div>
 				<span>
@@ -17,7 +17,7 @@ const AnalyticsSection = (props: Props) => {
 				</span>
 			</div>
 			<div className="flex items-center gap-3">
-				<div className="px-3 py-3 rounded-md bg-white/10">
+				<div className="px-3 py-3 rounded-md bg-purple-600/50">
 					<FaGithub size={32} />
 				</div>
 				<span>
@@ -26,7 +26,7 @@ const AnalyticsSection = (props: Props) => {
 				</span>
 			</div>
 			<div className="flex items-center gap-3">
-				<div className="px-3 py-3 rounded-md bg-white/10">
+				<div className="px-3 py-3 rounded-md bg-purple-600/50">
 					<IoIosPerson size={32} />
 				</div>
 				<span>

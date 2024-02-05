@@ -21,14 +21,14 @@ const HeroSection = (props: Props) => {
 	// 		});
 	// };
 	return (
-		<div className="flex flex-col items-center min-h-screen gap-12 mt-40 w-[1284px] max-w-[1284px]">
+		<div className=" flex flex-col items-center min-h-screen gap-12 mt-40 w-[1284px] max-w-[1284px]">
 			<NextSeo
 				title="Search"
 				description="🦸‍♀️ A super template for Next.js with a pack of incredible tools"
 			/>
 
 			{/* Hero section */}
-			<div className="flex flex-col items-center justify-center w-full gap-10">
+			<div className="flex flex-col items-center justify-center w-full gap-10 ">
 				<h1 className="font-black md:text-6xl text-7xl max-w-[700px] text-center leading-[1.1]">
 					<span>Indexing the best</span>
 					<br />
@@ -39,6 +39,10 @@ const HeroSection = (props: Props) => {
 					Development.
 				</h2>
 			</div>
+
+			{/* Blurred blob */}
+			<div className="absolute w-56 h-56 bg-purple-600 -top-10 -left-12 blur-[140px] rounded-full "></div>
+			<div className="absolute w-56 h-56 bg-purple-600 top-[23%] -translate-y-[50%] -right-32 blur-[140px] rounded-full "></div>
 
 			{/* CTA */}
 			<div className="flex items-center gap-8">

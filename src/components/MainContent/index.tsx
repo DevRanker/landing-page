@@ -49,7 +49,7 @@ export default function MainContentComponent({
 			// bgColor={bgColor}
 			bgImage={`url("${HERO_PATTERN(colorMode)}")`}
 			overflow="hidden"
-			// className="flex justify-center"
+			className="bg-[image:url(/static/images/grainyBg.png)]"
 		>
 			<div className="">
 				{/* <Flex

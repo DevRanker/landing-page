@@ -50,7 +50,7 @@ const BackersSlider = (props: Props) => {
 							{logosArray1.map((logo, index) => (
 								<div
 									key={index}
-									className="w-[clamp(10rem,1rem_+_40vmin,30rem)] grid place-items-center p-[calc(10rem,1rem_+_30vmin,30rem)/10] "
+									className="w-[clamp(10rem,1rem_+_30vmin,25rem)] grid place-items-center p-[calc(10rem,1rem_+_20vmin,25rem)/10] "
 								>
 									<Image
 										src={logo}
@@ -66,7 +66,7 @@ const BackersSlider = (props: Props) => {
 							{logosArray1.map((logo, index) => (
 								<div
 									key={index}
-									className="w-[clamp(10rem,1rem_+_40vmin,30rem)] grid place-items-center p-[calc(10rem,1rem_+_30vmin,30rem)/10] "
+									className="w-[clamp(10rem,1rem_+_30vmin,25rem)] grid place-items-center p-[calc(10rem,1rem_+_20vmin,25rem)/10] "
 								>
 									<Image
 										src={logo}
@@ -89,7 +89,7 @@ const BackersSlider = (props: Props) => {
 							{logosArray2.map((logo, index) => (
 								<div
 									key={index}
-									className="w-[clamp(10rem,1rem_+_40vmin,30rem)] grid place-items-center p-[calc(10rem,1rem_+_30vmin,30rem)/10] "
+									className="w-[clamp(10rem,1rem_+_30vmin,25rem)] grid place-items-center p-[calc(10rem,1rem_+_20vmin,25rem)/10] "
 								>
 									<Image
 										src={logo}
@@ -108,7 +108,7 @@ const BackersSlider = (props: Props) => {
 							{logosArray2.map((logo, index) => (
 								<div
 									key={index}
-									className="w-[clamp(10rem,1rem_+_40vmin,30rem)] grid place-items-center p-[calc(10rem,1rem_+_30vmin,30rem)/10] "
+									className="w-[clamp(10rem,1rem_+_30vmin,25rem)] grid place-items-center p-[calc(10rem,1rem_+_20vmin,25rem)/10] "
 								>
 									<Image
 										src={logo}

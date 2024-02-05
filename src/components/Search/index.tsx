@@ -91,6 +91,7 @@ export default function SearchComponent(
 						size="lg"
 						borderRadius="xl"
 						colorScheme="purple"
+						className="text-white"
 					/>
 				</HStack>
 			</form>
