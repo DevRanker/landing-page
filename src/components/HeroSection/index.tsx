@@ -6,24 +6,25 @@ import Image from 'next/image';
 import { slide } from '@root/src/animations';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
-// import{ router as Router} from 'next/router';
+import { useRouter } from 'next/router';
+import HomeTable from '../HomeTable';
 
 type Props = {};
 
 const HeroSection = (props: Props) => {
-	// const router = Router();
+	const router = useRouter();
 
-	// const handleSearchLogin = (login?: string) => {
-	// 	login &&
-	// 		router.push({
-	// 			pathname: '/user/[login]',
-	// 			query: { login },
-	// 		});
-	// };
+	const handleSearchLogin = (login?: string) => {
+		login &&
+			router.push({
+				pathname: '/user/[login]',
+				query: { login },
+			});
+	};
 	return (
 		<div className=" flex flex-col items-center min-h-screen gap-12 mt-40 w-[1284px] max-w-[1284px]">
 			<NextSeo
-				title="Search"
+				title="Home"
 				description="🦸‍♀️ A super template for Next.js with a pack of incredible tools"
 			/>
 
@@ -35,7 +36,7 @@ const HeroSection = (props: Props) => {
 					<span className="">Developers</span> in Web3
 				</h1>
 				<h2 className="text-xl font-normal opacity-50 max-w-[480px] text-center">
-					Driving Growth in the Web3 Space. Unleashing Potential in Decentralized
+					Driving Growth in the Web3 Space. Unleashing Potential in the Decentralized
 					Development.
 				</h2>
 			</div>
@@ -70,16 +71,13 @@ const HeroSection = (props: Props) => {
 				className=""
 			>
 				<Center w="full">
-					{/* <SearchComponent handleSearchLogin={handleSearchLogin} /> */}
-					<SearchComponent />
+					<SearchComponent handleSearchLogin={handleSearchLogin} />
+					{/* <SearchComponent /> */}
 				</Center>
 			</MotionContainer>
 
 			{/* Glide table */}
-			{/* <DataEditor getCellContent={getData} columns={columns} rows={numRows} /> */}
-			<div>
-				<Image src="/static/images/gridTable.png" alt="Hero" width={1284} height={800} />
-			</div>
+			<HomeTable />
 		</div>
 	);
 };

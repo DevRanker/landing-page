@@ -36,17 +36,17 @@ const Navbar: React.FC<Props> = props => {
 		<div className="flex z-[999] justify-center items-center w-full h-16 fixed  top-0 backdrop-blur-xl border-b-[0.8px] border-black dark:border-white/15 shadow-sm">
 			<div className="flex justify-between items-center max-w-[1284px] w-[1284px]">
 				<div className="flex gap-5">
-					<Link href="/login">
+					<Link href="https://github.com/DevRanker" target="_blank">
 						<FaGithub className="text-xl" />
 					</Link>
-					<Link href="/login" className="">
+					<Link href="/" className="">
 						<FaXTwitter className="text-xl" />
 					</Link>
-					<Link href="/login">
+					<Link href="/">
 						<FaLinkedin className="text-xl" />
 					</Link>
 				</div>
-				<div className="flex items-center h-full gap-2 text-2xl font-black ">
+				<Link href={'/'} className="flex items-center h-full gap-2 text-2xl font-black ">
 					<Image
 						src="/devranker.jpeg"
 						alt="Dev Ranker"
@@ -55,11 +55,11 @@ const Navbar: React.FC<Props> = props => {
 						className="rounded-full"
 					/>
 					Dev Ranker
-				</div>
+				</Link>
 				<div className="flex items-center gap-5">
-					<Link href="/login">Home</Link>
-					<Link href="/register">About</Link>
-					<Link href="/login">Login</Link>
+					<Link href="/">Home</Link>
+					<Link href="/">About</Link>
+					<Link href="/">Login</Link>
 					{/* <ThemeButtonComponent styleProps={buttonStyleProps} /> */}
 				</div>
 			</div>

@@ -30,15 +30,17 @@ const BackersSlider = (props: Props) => {
 	return (
 		<>
 			{/* Supported By */}
-			<div className="flex flex-col items-center w-full gap-8">
+			<div className="flex flex-col items-center max-w-[1284px] gap-12">
 				<div className="flex flex-col gap-2">
 					<h2 className="text-3xl font-black text-center">Supported By</h2>
-					<h3>Backed and trusted by the leaders of the Web3 revolution</h3>
+					<h3 className="opacity-80">
+						Backed and trusted by the leaders of the Web3 revolution
+					</h3>
 				</div>
 
 				{/* Log sliders */}
 				<div
-					className="flex flex-col items-center w-full gap-8 mask"
+					className="flex flex-col items-center w-full mask"
 					style={{
 						maskImage:
 							'linear-gradient(to right, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 1) 10%, hsla(0, 0%, 0%, 1) 90%, hsla(0, 0%, 0%, 0))',
