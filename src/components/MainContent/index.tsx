@@ -13,11 +13,13 @@ import {
 
 // --- Styles ---
 import { HERO_PATTERN } from '@styles/bgImages';
+import Footer from '../Footer';
 
 // --- Components ---
 const SearchHistoryComponent = dynamic(() => import('@components/SearchHistory'));
 const ThemeButtonComponent = dynamic(() => import('@components/ThemeButton'));
 const InfoLinkComponent = dynamic(() => import('@components/InfoLink'));
+const Navbar = dynamic(() => import('@components/Navbar'));
 
 // --- Component Props Interface ---
 interface IMainContentProps {
@@ -29,7 +31,8 @@ export default function MainContentComponent({
 }: IMainContentProps): JSX.Element {
 	const { colorMode } = useColorMode();
 
-	const bgColor = useColorModeValue('gray.50', 'gray.900');
+	// const bgColor = useColorModeValue('gray.50', 'gray.900');
+	const bgColor = '#050414';
 
 	const buttonStyleProps:
 		| ComponentDefaultProps
@@ -43,26 +46,29 @@ export default function MainContentComponent({
 
 	return (
 		<Box
-			bgColor={bgColor}
+			// bgColor={bgColor}
 			bgImage={`url("${HERO_PATTERN(colorMode)}")`}
 			overflow="hidden"
+			className="bg-[image:url(/static/images/grainyBg.png)]"
 		>
-			<Flex
-				gap={4}
-				height=""
-				position="absolute"
-				top={[4, 10]}
-				right={[4, 10]}
-				zIndex="overlay"
-			>
-				<SearchHistoryComponent styleProps={buttonStyleProps} />
+			<div className="">
+				{/* <Flex
+					gap={4}
+					height=""
+					position="absolute"
+					top={[4, 10]}
+					right={[4, 10]}
+					zIndex="overlay"
+				>
+					<SearchHistoryComponent styleProps={buttonStyleProps} />
 
-				<ThemeButtonComponent styleProps={buttonStyleProps} />
-			</Flex>
+					<ThemeButtonComponent styleProps={buttonStyleProps} />
+				</Flex> */}
+				<Navbar />
 
-			{children}
-
-			<InfoLinkComponent bgColor={bgColor} />
+				{children}
+				<Footer bgColor={bgColor} />
+			</div>
 		</Box>
 	);
 }

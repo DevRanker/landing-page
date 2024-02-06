@@ -16,8 +16,8 @@
 		"jsx": "preserve",
 		"baseUrl": ".",
 		"paths": {
+			"@/*": ["./src/*"],
 			"@root/*": ["./*"],
-
 			"@docs/*": ["./public/docs/*"],
 			"@icons/*": ["./public/static/icons/*"],
 			"@images/*": ["./public/static/images/*"],
@@ -33,7 +33,7 @@
 			"@services/*": ["./src/services/*"],
 			"@stores/*": ["./src/stores/*"],
 			"@styles/*": ["./src/styles/*"],
-			"@utils/*": ["./src/utils/*"]
+			"@utils/*": ["src/lib/utils/*"]
 		},
 		"incremental": true
 	},

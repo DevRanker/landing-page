@@ -17,6 +17,9 @@ import SEO from '@root/next-seo.config';
 // --- Components ---
 import MainContentComponent from '@components/MainContent';
 
+// --- Components ---
+import '@styles/globals.css';
+
 const queryClient = new QueryClient();
 
 export default function _app({ Component, pageProps, router: { route } }: AppProps) {

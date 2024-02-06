@@ -1,14 +1,14 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
 	type: 'website',
-	titleTemplate: '%s | Next-Plate',
-	defaultTitle: 'Next-Plate',
-	description: '🦸‍♀️ A super template for Next.js with a pack of incredible tools',
-	site_name: 'Next-Plate',
+	titleTemplate: '%s | DevRanker',
+	defaultTitle: 'DevRanker',
+	description: 'A place to find worlds best developers in the world',
+	site_name: 'DevRanker',
 	openGraph: {
 		url: 'https://next-plate.vercel.app',
-		title: 'Next-Plate',
-		description: '🦸‍♀️ A super template for Next.js with a pack of incredible tools',
+		title: 'DevRanker',
+		description: 'A place to find worlds best developers in the world',
 		images: [
 			{
 				url: 'https://next-plate.vercel.app/static/images/banner.jpg',
