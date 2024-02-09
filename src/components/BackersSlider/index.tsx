@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 type Props = {};
@@ -30,14 +31,21 @@ const BackersSlider = (props: Props) => {
 		<>
 			{/* Backed By */}
 			<div className="flex flex-col gap-8">
-				<h2 className="text-3xl font-black text-center">Backed By</h2>
-				<Image src="/static/images/orangeDaoBanner.jpg" width={500} height={200} alt="" />
+				{/* <h2 className="text-3xl font-black text-center">Backed By</h2> */}
+				<Link href="https://www.orangedao.xyz/" target="_blank">
+					<Image
+						src="/static/images/orangeDaoBanner.jpg"
+						width={500}
+						height={200}
+						alt=""
+					/>
+				</Link>
 			</div>
 			{/* Supported By */}
 			<div className="flex flex-col items-center max-w-[1284px] gap-4">
 				<div className="flex flex-col">
 					<h2 className="text-3xl font-black text-center">
-						In the Past, we’ve worked with
+						In our prior ventures, we&apos;ve worked with
 					</h2>
 					{/* <h3 className="opacity-80">
 						Backed and trusted by the leaders of the Web3 revolution
