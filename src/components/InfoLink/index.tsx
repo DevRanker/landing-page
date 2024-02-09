@@ -11,8 +11,15 @@ interface IInfoLinkProps {
 
 export default function InfoLinkComponent({ bgColor }: IInfoLinkProps): JSX.Element {
 	return (
-		<Box w="full" display="grid" placeItems="center" zIndex="overlay" bottom="4" px="4">
-			© {new Date().getFullYear()} DevRanker. Build with ❤️ in 🇮🇳
+		<Box
+			w="full"
+			display="grid"
+			placeItems="center"
+			zIndex="overlay"
+			px="4"
+			className="mt-10 mb-4"
+		>
+			© {new Date().getFullYear()} DevRanker. Build with ❤️ in 🇺🇸
 		</Box>
 	);
 }

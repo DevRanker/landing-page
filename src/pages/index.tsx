@@ -17,7 +17,7 @@ export default function HomePage() {
 			<HeroSection />
 
 			{/* Analytics section */}
-			<AnalyticsSection />
+			{/* <AnalyticsSection /> */}
 
 			{/* Backers Slider */}
 			<BackersSlider />

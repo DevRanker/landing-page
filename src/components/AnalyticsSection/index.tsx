@@ -10,8 +10,8 @@ const AnalyticsSection = (props: Props) => {
 			<div className="flex flex-col gap-2 text-center items-center">
 				<h2 className="text-3xl font-black text-center">Analytics</h2>
 				<h3 className="w-full opacity-80 ">
-					We bring the best developers from Web3 in one place and we have the numbers to
-					prove it
+					We have access to the best developers in web3 and the top startups hiring in
+					web3”
 				</h3>
 			</div>
 			<div className="flex gap-16">
