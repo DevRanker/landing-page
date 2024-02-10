@@ -31,7 +31,6 @@ const BackersSlider = (props: Props) => {
 		<>
 			{/* Backed By */}
 			<div className="flex flex-col gap-8">
-				{/* <h2 className="text-3xl font-black text-center">Backed By</h2> */}
 				<Link href="https://www.orangedao.xyz/" target="_blank">
 					<Image
 						src="/static/images/orangeDaoBanner.jpg"

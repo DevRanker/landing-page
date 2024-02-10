@@ -23,7 +23,7 @@ const HeroSection = (props: Props) => {
 			});
 	};
 	return (
-		<div className=" flex flex-col items-center min-h-screen gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden">
+		<div className=" flex flex-col items-center gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden">
 			<NextSeo
 				title="Home"
 				description="🦸‍♀️ A super template for Next.js with a pack of incredible tools"
