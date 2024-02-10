@@ -24,21 +24,52 @@ export default class Document extends NextDocument {
 		return (
 			<Html lang="en">
 				<Head>
-					<link rel="manifest" href="/site.webmanifest" />
+					{/* Icons for Dark theme */}
+					<link rel="manifest" href="/static/icons/faviconsDarkFinal/site.webmanifest" />
 					<link
-						href="/static/icons/icon-16x16.png"
+						href="/static/icons/faviconsDarkFinal/favicon-16x16.png"
 						rel="icon"
 						type="image/png"
 						sizes="16x16"
+						className="hidden dark:block"
 					/>
 					<link
-						href="/static/icons/icon-32x32.png"
+						href="/static/icons/faviconsDarkFinal/favicon-32x32.png"
 						rel="icon"
 						type="image/png"
 						sizes="32x32"
 					/>
-					<link rel="apple-touch-icon" href="/static/icons/icon-32x32.png" />
-					<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+					<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon-32x32.png" />
+					<link
+						rel="shortcut icon"
+						href="/static/icons/faviconsDarkFinal/favicon.ico"
+						type="image/x-icon"
+					/>
+					{/* ----------------------------------------------------------------- */}
+
+					{/* Icons for Light theme */}
+					<link rel="manifest" href="/static/icons/faviconsLightFinal/site.webmanifest" />
+					<link
+						href="/static/icons/faviconsLightFinal/favicon-16x16.png"
+						rel="icon"
+						type="image/png"
+						sizes="16x16"
+						className="hidden dark:block"
+					/>
+					<link
+						href="/static/icons/faviconsLightFinal/favicon-32x32.png"
+						rel="icon"
+						type="image/png"
+						sizes="32x32"
+					/>
+					<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon-32x32.png" />
+					<link
+						rel="shortcut icon"
+						href="/static/icons/faviconsLightFinal/favicon.ico"
+						type="image/x-icon"
+					/>
+					{/* ------------------------------------------------------------------ */}
+
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link
 						href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"

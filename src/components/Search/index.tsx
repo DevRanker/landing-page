@@ -71,7 +71,7 @@ export default function SearchComponent({
 							/>
 						</InputGroup>
 						{!errors.login ? (
-							<FormHelperText>
+							<FormHelperText className="text-center">
 								Insert a valid GitHub Profile to get the data
 							</FormHelperText>
 						) : (
@@ -87,6 +87,7 @@ export default function SearchComponent({
 						size="lg"
 						borderRadius="xl"
 						colorScheme="purple"
+						className="text-white"
 					/>
 				</HStack>
 			</form>

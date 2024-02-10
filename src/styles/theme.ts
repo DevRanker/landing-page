@@ -8,8 +8,8 @@ const config: ThemeConfig = {
 const theme = extendTheme({
 	config,
 	fonts: {
-		heading: 'Rubik',
-		body: 'Rubik',
+		heading: 'Poppins',
+		body: 'Poppins',
 	},
 	styles: {
 		global: {
@@ -20,7 +20,7 @@ const theme = extendTheme({
 				width: '6px',
 			},
 			'*::-webkit-scrollbar-thumb': {
-				background: 'gray.500',
+				background: 'purple.500',
 			},
 		},
 	},

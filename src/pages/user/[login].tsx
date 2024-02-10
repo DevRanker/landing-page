@@ -24,6 +24,7 @@ const UserComponent = dynamic(() => import('@components/User'));
 
 // -- Animations --
 import { slide } from '@animations';
+import { IUser } from '@root/src/interfaces/IUser';
 
 export default function UserPage() {
 	const { addUser } = useUserStore(state => state);
@@ -42,16 +43,11 @@ export default function UserPage() {
 		error,
 	} = useUser(login, {
 		enabled: !!login,
+		queryKey: ['users', login],
 	});
 
-	// --- Using SWR ---
-	//
-	// const { data: user, error } = useFetch<IUser>(login ? `users/${login}` : null, {
-	// 	refreshInterval: 30,
-	// });
-
 	useEffect(() => {
-		if (user) addUser(user);
+		if (user) addUser(user as IUser);
 	}, [addUser, user]);
 
 	const handleLogin = () => {
@@ -94,7 +90,7 @@ export default function UserPage() {
 
 					{isLoading && <Spinner color="white" size="xl" />}
 
-					{user && <UserComponent user={user} constraintsRef={constraintsRef} />}
+					{user && <UserComponent user={user as IUser} constraintsRef={constraintsRef} />}
 				</MotionBox>
 			</MotionBox>
 		</>

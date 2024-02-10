@@ -20,8 +20,8 @@ export default function GoBackButtonComponent({ path }: IGoBackButtonProps): JSX
 			colorScheme="purple"
 			leftIcon={<FiArrowLeft size="1.5rem" />}
 			position="absolute"
-			top={[4, 10]}
-			left={[4, 10]}
+			top={[14, 20]}
+			left={[4, 14]}
 			zIndex="overlay"
 			borderRadius="xl"
 			boxShadow="xl"
