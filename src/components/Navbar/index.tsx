@@ -33,7 +33,7 @@ const Navbar: React.FC<Props> = props => {
 		_hover: { backgroundColor: useColorModeValue('gray.700', 'gray.200') },
 	};
 	return (
-		<div className="flex z-[999] justify-center items-center w-full h-16 fixed  top-0 backdrop-blur-xl border-b-[0.8px] border-black dark:border-white/15 shadow-sm">
+		<div className="flex z-[999] justify-center items-center w-full h-24 fixed  top-0 backdrop-blur-xl border-b-[0.8px] border-black dark:border-white/15 shadow-sm">
 			<div className="flex justify-between items-center max-w-[1284px] w-[1284px]">
 				<Link href={'/'} className="flex items-center h-full gap-2 text-xl font-black ">
 					<Image
@@ -45,9 +45,10 @@ const Navbar: React.FC<Props> = props => {
 					/>
 					Dev Ranker
 				</Link>
-				<div className="flex items-center gap-12 text-lg">
+				<div className="flex items-center gap-20 text-lg">
 					<Link
 						href="https://cal.com/arstofbaniya"
+						target="_blank"
 						className="flex items-center justify-center border-2 border-purple-600 hover:bg-purple-600 transition-all duration-300 text-white rounded-full py-2 px-4
 					shadow-[rgba(0,0,0,0.35)_0px_5px_15px]
 					"
@@ -56,7 +57,11 @@ const Navbar: React.FC<Props> = props => {
 					</Link>
 					<Link href="/">Home</Link>
 					{/* <Link href="/">Jobs</Link> */}
-					<Link href="https://twitter.com/devranker" target="_blank" className="">
+					<Link
+						href="https://twitter.com/devranker"
+						target="_blank"
+						className=" border-2 border-white dark:border-black rounded-full p-2"
+					>
 						<FaXTwitter className="text-xl" />
 					</Link>
 				</div>
