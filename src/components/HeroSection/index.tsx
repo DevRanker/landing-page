@@ -9,6 +9,7 @@ import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
 import HomeTable from '../HomeTable';
 import { FaGithub } from 'react-icons/fa';
+import CountUp from 'react-countup';
 
 type Props = {};
 
@@ -63,7 +64,7 @@ const HeroSection = (props: Props) => {
 					</div>
 					<span>
 						<h4 className="text-3xl font-bold text-center">
-							9,756 <span className="">+</span>
+							<CountUp start={0} end={9756} /> <span className="">+</span>
 						</h4>
 						<h3 className="opacity-85"> Web3 Developers Indexed</h3>
 					</span>

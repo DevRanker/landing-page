@@ -64,6 +64,7 @@ const Navbar: React.FC<Props> = props => {
 					>
 						<FaXTwitter className="text-xl" />
 					</Link>
+					{/* <ThemeButtonComponent /> */}
 				</div>
 			</div>
 		</div>

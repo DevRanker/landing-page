@@ -30,8 +30,6 @@ export default function MainContentComponent({
 	children,
 }: IMainContentProps): JSX.Element {
 	const { colorMode } = useColorMode();
-
-	// const bgColor = useColorModeValue('gray.50', 'gray.900');
 	const bgColor = '#050414';
 
 	const buttonStyleProps:
@@ -46,26 +44,13 @@ export default function MainContentComponent({
 
 	return (
 		<Box
-			// bgColor={bgColor}
+			bgColor={bgColor}
 			bgImage={`url("${HERO_PATTERN(colorMode)}")`}
 			overflow="hidden"
 			className="bg-[image:url(/static/images/grainyBg.png)]"
 		>
 			<div className="">
-				{/* <Flex
-					gap={4}
-					height=""
-					position="absolute"
-					top={[4, 10]}
-					right={[4, 10]}
-					zIndex="overlay"
-				>
-					<SearchHistoryComponent styleProps={buttonStyleProps} />
-
-					<ThemeButtonComponent styleProps={buttonStyleProps} />
-				</Flex> */}
 				<Navbar />
-
 				{children}
 				<Footer bgColor={bgColor} />
 			</div>
