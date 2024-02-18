@@ -250,20 +250,17 @@ const HomeTable = (props: Props) => {
 				},
 			} as UserProfileCell;
 		} else if (key === 'userName') {
-			// num = row + 1;
-			// rand();
 			return {
 				kind: GridCellKind.Uri,
 				allowOverlay: true,
 				readonly: true,
-				// hoverEffect: true,
 				copyData: '4',
 				// underline: true,
 				data: displayData,
 				style: 'normal',
 				onClickUri: `
 				https://www.github.com/${displayData}`,
-			} as UriCell;
+			} as UriCell; // Add 'as UriCell' to specify the type of the returned object.
 		} else if (key === 'socialAccounts' && Array.isArray(data)) {
 			return {
 				kind: GridCellKind.Custom,
