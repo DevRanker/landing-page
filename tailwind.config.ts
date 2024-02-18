@@ -81,6 +81,9 @@ const config = {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				logoScrollX: 'logoScrollX 30s linear infinite',
 			},
+			screens: {
+				xs: '484px',
+			},
 		},
 	},
 	plugins: [require('tailwindcss-animate')],

@@ -11,6 +11,7 @@ import {
 	GridColumnIcon,
 	Item,
 	Theme,
+	UriCell,
 } from '@glideapps/glide-data-grid';
 import { hashCode } from 'hashcode';
 import range from 'lodash/range.js';
@@ -28,6 +29,8 @@ import { useTheme } from 'next-themes';
 import { SparklineCell } from '@glideapps/glide-data-grid-cells/dist/ts/cells/sparkline-cell';
 import { uniq } from 'lodash';
 import { TagsCell } from '@glideapps/glide-data-grid-cells/dist/ts/cells/tags-cell';
+import { UserProfileCell } from '@glideapps/glide-data-grid-cells/dist/ts/cells/user-profile-cell';
+import { LinksCell } from '@glideapps/glide-data-grid-cells/dist/ts/cells/links-cell';
 
 type Props = {};
 
@@ -77,27 +80,27 @@ const darkTheme = {
 
 const possibleTags = [
 	{
-		tag: 'Bug',
+		tag: 'C++',
 		color: '#ff4d4d35',
 	},
 	{
-		tag: 'Feature',
+		tag: 'Python',
 		color: '#35f8ff35',
 	},
 	{
-		tag: 'Enhancement',
+		tag: 'Solidity',
 		color: '#48ff5735',
 	},
 	{
-		tag: 'First Issue',
+		tag: 'Rust',
 		color: '#436fff35',
 	},
 	{
-		tag: 'PR',
+		tag: 'JavaScript',
 		color: '#e0ff3235',
 	},
 	{
-		tag: 'Assigned',
+		tag: 'Go',
 		color: '#ff1eec35',
 	},
 ];
@@ -149,53 +152,66 @@ const HomeTable = (props: Props) => {
 	const glideColumns = useMemo<GridColumn[]>(
 		() => [
 			{
+				id: 'profileImage',
+				title: '',
+				width: 40,
+				// icon: GridColumnIcon.HeaderImage,
+			},
+			{
+				id: 'userName',
 				title: 'Username',
-				width: 100,
+				// width: 100,
 				icon: GridColumnIcon.HeaderString,
 				overlayIcon: GridColumnIcon.RowOwnerOverlay,
 				group: 'User Info',
 			},
 			{
+				id: 'email',
 				title: 'Email',
-				width: 120,
+				// width: 120,
 				icon: GridColumnIcon.HeaderEmail,
 				group: 'User Info',
 			},
 			{
+				id: 'socialAccounts',
 				title: 'Social Accounts',
-				width: 150,
+				// width: 150,
 				icon: GridColumnIcon.HeaderString,
 				overlayIcon: GridColumnIcon.RowOwnerOverlay,
 				group: 'Extra',
 			},
 			{
+				id: 'country',
 				title: 'Country',
-				width: 150,
+				// width: 150,
 				icon: GridColumnIcon.HeaderSplitString,
 				group: 'Extra',
 			},
 			{
+				id: 'weeklyContributions',
 				title: 'Weekly Contributions(1 yr)',
-				width: 250,
+				// width: 250,
 				icon: GridColumnIcon.HeaderNumber,
 				group: 'Contributions Stats',
 			},
 
 			{
+				id: 'topics',
 				title: 'Topics',
-				width: 200,
+				// width: 200,
 				icon: GridColumnIcon.HeaderDate,
 				group: 'Contributions Stats',
 			},
 			{
+				id: 'languages',
 				title: 'Languages',
-				width: 200,
+				// width: 200,
 				icon: GridColumnIcon.HeaderString,
 				group: 'Contributions Stats',
 			},
 			// {
 			// 	title: 'Button',
-			// 	width: 200,
+			// width: 200,
 			// 	icon: GridColumnIcon.HeaderString,
 			// },
 		],
@@ -217,7 +233,38 @@ const HomeTable = (props: Props) => {
 		// 		.map(imgUrl => `<img src="${imgUrl}" alt="Social Account">`)
 		// 		.join(' ');
 		// }
-		if (key === 'socialAccounts' && Array.isArray(data)) {
+
+		if (key === 'profileImage') {
+			num = row + 1;
+			rand();
+			return {
+				kind: GridCellKind.Custom,
+				allowOverlay: true,
+				copyData: '4',
+				readonly: row % 2 === 0,
+				data: {
+					kind: 'user-profile-cell',
+					image: `https://avatars.dicebear.com/api/avataaars/${num}.svg`,
+					initial: 'B',
+					tint: '#F1D86E',
+				},
+			} as UserProfileCell;
+		} else if (key === 'userName') {
+			// num = row + 1;
+			// rand();
+			return {
+				kind: GridCellKind.Uri,
+				allowOverlay: true,
+				readonly: true,
+				// hoverEffect: true,
+				copyData: '4',
+				// underline: true,
+				data: displayData,
+				style: 'normal',
+				onClickUri: `
+				https://www.github.com/${displayData}`,
+			} as UriCell;
+		} else if (key === 'socialAccounts' && Array.isArray(data)) {
 			return {
 				kind: GridCellKind.Custom,
 				cursor: 'pointer',
@@ -238,6 +285,23 @@ const HomeTable = (props: Props) => {
 					],
 				},
 			};
+		} else if (key === 'weeklyContributions') {
+			num = row + 1;
+			const values = range(0, 15).map(() => rand() * 50);
+			return {
+				kind: GridCellKind.Custom,
+				allowOverlay: false,
+				copyData: '4',
+				data: {
+					kind: 'sparkline-cell',
+					values,
+					displayValues: values.map(x => Math.round(x).toString()),
+					color: row % 2 === 0 ? '#77c4c4' : '#D98466',
+					// graphKind: "line",
+					// hideAxis: true,
+					yAxis: [-50, 50],
+				},
+			} as SparklineCell;
 		} else if (key === 'topics') {
 			const dataArray = Array.isArray(data) ? data : [data];
 			return {
@@ -250,7 +314,7 @@ const HomeTable = (props: Props) => {
 				),
 				color: Math.max(...dataArray.map(Number)) > 1 ? '#77c4c4' : '#D98466',
 			} as unknown as TagsCellType;
-		} else if (col === 6) {
+		} else if (key === 'languages') {
 			num = row + 1;
 			rand();
 			return {
@@ -269,23 +333,6 @@ const HomeTable = (props: Props) => {
 					]),
 				},
 			} as TagsCell;
-		} else if (col === 4) {
-			num = row + 1;
-			const values = range(0, 15).map(() => rand() * 50);
-			return {
-				kind: GridCellKind.Custom,
-				allowOverlay: false,
-				copyData: '4',
-				data: {
-					kind: 'sparkline-cell',
-					values,
-					displayValues: values.map(x => Math.round(x).toString()),
-					color: row % 2 === 0 ? '#77c4c4' : '#D98466',
-					// graphKind: "line",
-					// hideAxis: true,
-					yAxis: [-50, 50],
-				},
-			} as SparklineCell;
 		}
 
 		return {
@@ -300,6 +347,7 @@ const HomeTable = (props: Props) => {
 		const person = data[row];
 
 		const propertyMap = [
+			{ key: 'profileImage', kind: GridCellKind.Image },
 			{ key: 'userName', kind: GridCellKind.Text },
 			{ key: 'email', kind: GridCellKind.Protected },
 			{ key: 'socialAccounts', kind: GridCellKind.Text },
@@ -355,18 +403,28 @@ const HomeTable = (props: Props) => {
 		return <div>Loading...</div>;
 	}
 
-	console.log('Cell content for weeklyContributions', getContent([4, 0]));
-	console.log('Cell content for Topics', getContent([5, 0]));
-	console.log('Cell content for Languages', getContent([6, 0]));
+	// console.log('Cell content for weeklyContributions', getContent([4, 0]));
+	// console.log('Cell content for Topics', getContent([5, 0]));
+	// console.log('Cell content for Languages', getContent([6, 0]));
 	return (
-		<div>
+		<div
+			className="mx-8 w-[85vw] xl:w-[1284px] max-w-[1484px]"
+			// style={{
+			// 	width: '100%',
+			// 	height: 'calc(100vh - 100px)',
+			// }}
+		>
 			<DataEditor
 				{...defaultProps}
 				className="rounded-xl shadow-lg"
-				width={'1284px'}
+				// width={'100%'}
+				// style={{
+				// 	width: '100%',
+				// 	height: 'calc(100vh - 100px)',
+				// }}
 				getCellContent={getContent}
 				columns={columns}
-				freezeColumns={2}
+				freezeColumns={1}
 				rows={data.length}
 				rowMarkers="number"
 				onSearchClose={onSearchClose}
@@ -374,12 +432,13 @@ const HomeTable = (props: Props) => {
 				keybindings={{ search: true }}
 				smoothScrollX={true}
 				smoothScrollY={true}
-				verticalBorder={c => c > 0}
-				getCellsForSelection={true}
+				// verticalBorder={c => c > 0}
+				// getCellsForSelection={true}
 				onColumnResize={onColumnResize}
 				overscrollY={50}
 				{...customRenderers}
 			/>
+			<div id="portal" />
 		</div>
 	);
 };

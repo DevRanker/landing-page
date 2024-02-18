@@ -86,19 +86,19 @@ const languages = [
 
 // Group of labels based on the repositories a developer has contributed to
 const topics = [
-	'Finance',
-	'Health',
-	'Education',
-	'Entertainment',
-	'Social',
-	'Business',
-	'Travel',
-	'Sports',
-	'Technology',
-	'Science',
-	'Art',
-	'Food',
-	'Music',
+	'Blockchain',
+	'Web3',
+	'AI',
+	'Cloud',
+	'Web Dev',
+	'Frontend ',
+	'Backend',
+	'Machine Learning',
+	'CI/CD',
+	'DevOps',
+	'Cybersecurity',
+	'Game Dev',
+	'AR/VR',
 ];
 
 const socialMediaLogoUrls = [
@@ -138,6 +138,7 @@ function getRandomLanguages(): string[] {
 }
 
 export const data = userNames.map(userName => ({
+	profileImage: `https://avatars.dicebear.com/api/avataaars.svg`,
 	userName: userName,
 	email: `${userName.toLowerCase()}@example.com`,
 	socialAccounts: getRandomSocialAccounts(),

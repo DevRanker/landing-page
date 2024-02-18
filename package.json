@@ -54,6 +54,7 @@
 		"axios": "1.6.7",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
+		"dev-ranker": "link:",
 		"framer-motion": "11.0.3",
 		"hashcode": "^1.0.3",
 		"lodash": "^4.17.21",
