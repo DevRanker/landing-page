@@ -40,11 +40,11 @@ export default class Document extends NextDocument {
 						sizes="32x32"
 					/>
 					<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon-32x32.png" />
-					<link
+					{/* <link
 						rel="shortcut icon"
 						href="/static/icons/faviconsDarkFinal/favicon.ico"
 						type="image/x-icon"
-					/>
+					/> */}
 					{/* ----------------------------------------------------------------- */}
 
 					{/* Icons for Light theme */}
@@ -63,11 +63,11 @@ export default class Document extends NextDocument {
 						sizes="32x32"
 					/>
 					<link rel="apple-touch-icon" href="/static/icons/apple-touch-icon-32x32.png" />
-					<link
+					{/* <link
 						rel="shortcut icon"
 						href="/static/icons/faviconsLightFinal/favicon.ico"
 						type="image/x-icon"
-					/>
+					/> */}
 					{/* ------------------------------------------------------------------ */}
 
 					<link rel="preconnect" href="https://fonts.gstatic.com" />

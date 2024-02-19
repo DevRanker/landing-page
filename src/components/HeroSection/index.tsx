@@ -32,12 +32,12 @@ const HeroSection = (props: Props) => {
 
 			{/* Hero section */}
 			<div className="flex flex-col items-center justify-center w-full gap-6 ">
-				<h1 className="font-black text-4xl leading-[1.25] xs:text-5xl xs:leading-[1.1] sm:text-6xl md:text-7xl text-center flex flex-col">
+				<h1 className="font-black text-3xl  leading-[1.25] xs:text-4xl xs:leading-[1] sm:text-6xl md:text-7xl text-center flex flex-col">
 					<span>Indexing the Top 2% </span>
-					<br />
-					<span className="-mt-12">Devs in Web3</span>
+					{/* <br /> */}
+					<span className="">Devs in Web3</span>
 				</h1>
-				<h2 className="text-base sm:text-xl lg:text-2xl font-normal opacity-50 max-w-[520px] text-center">
+				<h2 className="text-sm xs:text-xl lg:text-2xl font-normal opacity-50 max-w-[520px] text-center">
 					The right developer recognized with zero-effort
 				</h2>
 			</div>

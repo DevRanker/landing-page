@@ -82,6 +82,7 @@ const config = {
 				logoScrollX: 'logoScrollX 30s linear infinite',
 			},
 			screens: {
+				xxs: '384px',
 				xs: '484px',
 			},
 		},
