@@ -8,6 +8,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = async _phase => {
 	/** @type {import('next').NextConfig} */
 	const nextConfig = {
+		optimizeFonts: false,
 		reactStrictMode: true,
 		swcMinify: true,
 		// extends: [],

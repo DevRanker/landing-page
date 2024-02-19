@@ -48,10 +48,22 @@ export default function SearchComponent({
 		new Promise(() => setTimeout(() => handleSearchLogin(login), 500));
 
 	return (
-		<MotionBox w="full">
+		<MotionBox className="sm:w-full">
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<HStack spacing="2" w="full" alignItems="flex-start" py="2">
+				<HStack
+					spacing="2"
+					w="full"
+					alignItems="flex-start"
+					className="flex flex-col items-center sm:flex-row gap-4"
+					style={{
+						flexDirection: 'column',
+						gap: '1.5rem',
+						alignItems: 'center',
+					}}
+					py="2"
+				>
 					<FormControl isInvalid={!!errors.login}>
+						{/* <div className="flex flex-col items-center"> */}
 						<InputGroup size="lg" variant="outline" borderColor="gray.600">
 							<InputLeftElement
 								pointerEvents="none"
@@ -68,7 +80,25 @@ export default function SearchComponent({
 								focusBorderColor="purple.500"
 								_placeholder={{ color: 'gray.400' }}
 								_hover={{ borderColor: 'purple.300' }}
+								className="max-w-full"
 							/>
+							{/* <div className="flex items-center gap-2 bg-gray-600 border-gray-600 focus:border-purple-500 focus:ring-0 rounded-xl text-whitesmoke placeholder-gray-400 hover:border-purple-300 transition-all duration-300 p-3 w-full h-12 text-lg focus:outline-none">
+						<FiGithub />
+						<input
+							type="text"
+							placeholder="Search GitHub Profile..."
+							className="w-full bg-transparent placeholder-gray-400 text-whitesmoke focus:outline-none"
+							{...register('login')}
+						/>
+					</div>
+					{!errors.login ? (
+						<FormHelperText className="text-center">
+							Insert a valid GitHub Profile to get the data
+						</FormHelperText>
+					) : (
+						<FormErrorMessage>{errors.login?.message as string}</FormErrorMessage>
+					)} */}
+							{/* </div> */}
 						</InputGroup>
 						{!errors.login ? (
 							<FormHelperText className="text-center">
@@ -87,7 +117,7 @@ export default function SearchComponent({
 						size="lg"
 						borderRadius="xl"
 						colorScheme="purple"
-						className="text-white"
+						className="text-white sm:w-4/12 w-full text-center"
 					/>
 				</HStack>
 			</form>

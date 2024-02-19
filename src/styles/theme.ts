@@ -20,7 +20,7 @@ const theme = extendTheme({
 				width: '6px',
 			},
 			'*::-webkit-scrollbar-thumb': {
-				background: 'purple.500',
+				background: 'purple.600',
 			},
 		},
 	},
