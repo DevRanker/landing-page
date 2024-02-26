@@ -3,21 +3,27 @@ const defaultSEOConfig = {
 	type: 'website',
 	titleTemplate: '%s | DevRanker',
 	defaultTitle: 'DevRanker',
-	description: 'A place to find worlds best developers in the world',
+	description: 'Indexing the Top 2% Devs in Web3',
 	site_name: 'DevRanker',
 	openGraph: {
-		url: 'https://next-plate.vercel.app',
+		url: 'https://devranker.com',
 		title: 'DevRanker',
-		description: 'A place to find worlds best developers in the world',
+		description: 'Indexing the Top 2% Devs in Web3',
 		images: [
 			{
-				url: 'https://next-plate.vercel.app/static/images/banner.jpg',
+				url: '/public/static/images/openGraph.jpeg',
 				width: 512,
 				height: 256,
-				alt: 'Next-Plate Banner Image',
+				alt: 'Dev Ranker Banner Image',
+			},
+			{
+				url: 'https://ibb.co/FxfbYXy',
+				width: 512,
+				height: 256,
+				alt: 'Dev Ranker Banner Image',
 			},
 		],
-		site_name: 'Next-Plate',
+		site_name: 'Dev Ranker',
 	},
 };
 
