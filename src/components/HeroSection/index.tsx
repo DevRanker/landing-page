@@ -61,7 +61,7 @@ const HeroSection = (props: Props) => {
 
 			{/* Blurred blob */}
 			<div className="absolute w-56 h-56 bg-purple-600 -top-10 -left-12 blur-[140px] rounded-full "></div>
-			<div className="absolute w-56 h-56 bg-purple-600 top-[23%] -translate-y-[50%] -right-32 blur-[140px] rounded-full "></div>
+			<div className="absolute w-56 h-56 bg-purple-600 top-[23%] -right-32 blur-[140px] rounded-full "></div>
 
 			{/* CTA */}
 			<div className="flex items-center gap-8">
