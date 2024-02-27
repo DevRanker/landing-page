@@ -24,21 +24,21 @@ const HeroSection = (props: Props) => {
 			});
 	};
 
-	useEffect(() => {
-		const queryFunction = async () => {
-			const res = await fetch('/api/query');
-			const data = await res.json();
-			console.log(data);
-		};
+	// useEffect(() => {
+	// 	const queryFunction = async () => {
+	// 		const res = await fetch('/api/query');
+	// 		const data = await res.json();
+	// 		console.log(data);
+	// 	};
 
-		const githubUsers = async () => {
-			const res = await fetch('/api/githubUsers');
-			const data = await res.json();
-			console.log(data);
-		};
-		// queryFunction();
-		githubUsers();
-	}, [router.query.login]);
+	// 	const githubUsers = async () => {
+	// 		const res = await fetch('/api/githubUsers');
+	// 		const data = await res.json();
+	// 		console.log(data);
+	// 	};
+	// 	// queryFunction();
+	// 	githubUsers();
+	// }, [router.query.login]);
 
 	return (
 		<div className=" flex flex-col items-center gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden px-8">
