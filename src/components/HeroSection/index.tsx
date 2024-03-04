@@ -1,5 +1,5 @@
 import { Center } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import SearchComponent from '../Search';
 import MotionContainer from '../Motion/MotionContainer';
 import Image from 'next/image';
@@ -23,6 +23,23 @@ const HeroSection = (props: Props) => {
 				query: { login },
 			});
 	};
+
+	// useEffect(() => {
+	// 	const queryFunction = async () => {
+	// 		const res = await fetch('/api/query');
+	// 		const data = await res.json();
+	// 		console.log(data);
+	// 	};
+
+	// 	const githubUsers = async () => {
+	// 		const res = await fetch('/api/githubUsers');
+	// 		const data = await res.json();
+	// 		console.log(data);
+	// 	};
+	// 	// queryFunction();
+	// 	githubUsers();
+	// }, [router.query.login]);
+
 	return (
 		<div className=" flex flex-col items-center gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden px-8">
 			<NextSeo
@@ -44,7 +61,7 @@ const HeroSection = (props: Props) => {
 
 			{/* Blurred blob */}
 			<div className="absolute w-56 h-56 bg-purple-600 -top-10 -left-12 blur-[140px] rounded-full "></div>
-			<div className="absolute w-56 h-56 bg-purple-600 top-[23%] -translate-y-[50%] -right-32 blur-[140px] rounded-full "></div>
+			<div className="absolute w-56 h-56 bg-purple-600 top-[23%] -right-32 blur-[140px] rounded-full "></div>
 
 			{/* CTA */}
 			<div className="flex items-center gap-8">

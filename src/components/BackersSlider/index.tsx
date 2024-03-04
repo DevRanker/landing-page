@@ -31,7 +31,11 @@ const BackersSlider = (props: Props) => {
 		<>
 			{/* Backed By */}
 			<div className="flex flex-col gap-8">
-				<Link href="https://www.orangedao.xyz/" className="relative" target="_blank">
+				<Link
+					href="https://techcrunch.com/2022/08/23/y-combinator-80-million-web3-crypto-startup-venture-capital-dao/"
+					className="relative"
+					target="_blank"
+				>
 					<Image
 						src="/static/images/orangeDaoBanner.jpg"
 						className="w-[300px] h-[100px] sm:w-[400px] sm:h-[130px] lg:w-[500px] lg:h-[150px]"
