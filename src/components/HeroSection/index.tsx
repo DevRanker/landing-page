@@ -24,28 +24,47 @@ const HeroSection = (props: Props) => {
 			});
 	};
 
-	// useEffect(() => {
-	// 	const queryFunction = async () => {
-	// 		const res = await fetch('/api/query');
-	// 		const data = await res.json();
-	// 		console.log(data);
-	// 	};
-
-	// 	const githubUsers = async () => {
-	// 		const res = await fetch('/api/githubUsers');
-	// 		const data = await res.json();
-	// 		console.log(data);
-	// 	};
-	// 	// queryFunction();
-	// 	githubUsers();
-	// }, [router.query.login]);
+	useEffect(() => {
+		const githubUsers = async () => {
+			console.log('Fetching github users');
+			try {
+				const res = await fetch('http://localhost:3000/api/githubUsers');
+				if (!res.ok) {
+					throw new Error(`HTTP error! status: ${res.status}`);
+				}
+				const data = await res.json();
+				console.log(
+					'Github users: ',
+					data,
+					'Length: ',
+					data.length,
+					'First user: ',
+					data[0]
+				);
+			} catch (error) {
+				console.error('An error occurred while fetching github users:', error);
+			}
+		};
+		githubUsers();
+		// const repositoryDetails = async () => {
+		// 	console.log('Fetching github users');
+		// 	try {
+		// 		const res = await fetch('http://localhost:3000/api/repositoryDetails');
+		// 		if (!res.ok) {
+		// 			throw new Error(`HTTP error! status: ${res.status}`);
+		// 		}
+		// 		const data = await res.json();
+		// 		console.log('Repos ', data, 'Length: ', data.length, 'First user: ', data[0]);
+		// 	} catch (error) {
+		// 		console.error('An error occurred while fetching repository details:', error);
+		// 	}
+		// };
+		// repositoryDetails();
+	}, [router.query.login]);
 
 	return (
 		<div className=" flex flex-col items-center gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden px-8">
-			<NextSeo
-				title="Home"
-				description="🦸‍♀️ A super template for Next.js with a pack of incredible tools"
-			/>
+			<NextSeo title="Home" description="High Precision Developer Hiring" />
 
 			{/* Hero section */}
 			<div className="flex flex-col items-center justify-center w-full gap-6 ">

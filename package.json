@@ -1,9 +1,9 @@
 {
 	"name": "dev-ranker",
-	"version": "1.11.0",
+	"version": "0.0.1",
 	"private": true,
-	"author": "Gustavo Matheus <gustavo.morinaga27@gmail.com>",
-	"description": "A super template for Next.js with a pack of incredible tools",
+	"author": "Dev Ranker",
+	"description": "Indexing the Top 2% Devs in Web3",
 	"lint-staged": {
 		"src/**/*.+(js|jsx|ts|tsx|json|md)": [
 			"pnpm run lint:fix"
