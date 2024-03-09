@@ -24,30 +24,6 @@ const HeroSection = (props: Props) => {
 			});
 	};
 
-	useEffect(() => {
-		const githubUsers = async () => {
-			console.log('Fetching github users');
-			try {
-				const res = await fetch('http://localhost:3000/api/githubUsers');
-				if (!res.ok) {
-					throw new Error(`HTTP error! status: ${res.status}`);
-				}
-				const data = await res.json();
-				console.log(
-					'Github users: ',
-					data,
-					'Length: ',
-					data.length,
-					'First user: ',
-					data[0]
-				);
-			} catch (error) {
-				console.error('An error occurred while fetching github users:', error);
-			}
-		};
-		githubUsers();
-	}, [router.query.login]);
-
 	return (
 		<div className=" flex flex-col items-center gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden px-8">
 			<NextSeo title="Home" description="High Precision Developer Hiring" />
@@ -60,7 +36,7 @@ const HeroSection = (props: Props) => {
 					<span className="">Best Developers</span>
 				</h1>
 				<h2 className="text-sm xs:text-xl lg:text-2xl font-normal opacity-50 max-w-[520px] text-center">
-					The right developers recognized with zero-effort
+					Using relevant code contributions for outreach
 				</h2>
 			</div>
 
@@ -75,9 +51,9 @@ const HeroSection = (props: Props) => {
 					</div>
 					<span>
 						<h4 className="text-3xl font-bold text-center">
-							<CountUp start={0} end={9756} /> <span className="">+</span>
+							<CountUp start={0} end={17486} duration={2} /> <span className="">+</span>
 						</h4>
-						<h3 className="opacity-85"> Web3 Developers Indexed</h3>
+						<h3 className="opacity-85"> Developers Indexed</h3>
 					</span>
 				</div>
 			</div>
