@@ -1,9 +1,9 @@
 {
-	"name": "dev-ranker",
+	"name": "devranker",
 	"version": "0.0.1",
 	"private": true,
 	"author": "DevRanker",
-	"description": "DevRanker finds and rankers developers using their github code and activity",
+	"description": "DevRanker finds and ranker developers using their github code and activity",
 	"lint-staged": {
 		"src/**/*.+(js|jsx|ts|tsx|json|md)": [
 			"pnpm run lint:fix"
