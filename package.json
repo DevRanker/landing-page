@@ -2,8 +2,8 @@
 	"name": "dev-ranker",
 	"version": "0.0.1",
 	"private": true,
-	"author": "Dev Ranker",
-	"description": "Indexing the Top 2% Devs in Web3",
+	"author": "DevRanker",
+	"description": "DevRanker finds and rankers developers using their github code and activity",
 	"lint-staged": {
 		"src/**/*.+(js|jsx|ts|tsx|json|md)": [
 			"pnpm run lint:fix"

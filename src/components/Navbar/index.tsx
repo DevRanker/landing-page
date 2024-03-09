@@ -81,7 +81,7 @@ const Navbar: React.FC<Props> = props => {
 
 					{/* Mobile Nav */}
 					{mobileMenuIsOpen && (
-						<div className="fixed text-2xl top-0 left-0 w-full h-screen bg-black dark:bg-gray-50/90 flex flex-col items-center justify-center gap-8">
+						<div className="fixed text-2xl top-0 left-0 w-full min-h-screen bg-black dark:bg-gray-50/90 flex flex-col items-center justify-center gap-8">
 							{/* Blurred blob */}
 							<div className="absolute w-56 h-56 bg-purple-600 -top-10 -left-12 blur-[140px] rounded-full "></div>
 							<div className="absolute w-56 h-56 bg-purple-600 bottom-64 -translate-y-[50%] -right-48 blur-[140px] rounded-full "></div>
@@ -90,12 +90,13 @@ const Navbar: React.FC<Props> = props => {
 								className="absolute top-8 right-8 text-3xl cursor-pointer"
 								onClick={() => setMobileMenuIsOpen(false)}
 							/>
-							<Link href="/" className="">
+							<Link href="/" className="" onClick={() => setMobileMenuIsOpen(false)}>
 								Home
 							</Link>
 							<Link
 								href="https://cal.com/arstofbaniya"
 								target="_blank"
+								onClick={() => setMobileMenuIsOpen(false)}
 								className="flex items-center justify-center border-2 border-purple-600 hover:bg-purple-600 transition-all duration-300  rounded-full py-2 px-4
 					shadow-[rgba(0,0,0,0.35)_0px_5px_15px] text-purple-600 hover:text-white
 					"
@@ -105,6 +106,7 @@ const Navbar: React.FC<Props> = props => {
 							<Link
 								href="https://twitter.com/devranker"
 								target="_blank"
+								onClick={() => setMobileMenuIsOpen(false)}
 								className=" border-2 border-black dark:border-black rounded-full p-2"
 							>
 								<FaXTwitter className="text-4xl" />

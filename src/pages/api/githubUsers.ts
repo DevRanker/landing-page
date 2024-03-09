@@ -3,7 +3,9 @@ import prisma from '@/utils/connect';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
 	try {
-		let data = await prisma.users.findMany({});
+		let data = await prisma.users.findMany({
+			take: 100,
+		});
 		// Convert BigInt values to strings
 		data = data.map(user => {
 			const newUser = { ...user };
