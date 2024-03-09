@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"private": true,
 	"author": "DevRanker",
-	"description": "DevRanker finds and ranker developers using their github code and activity",
+	"description": "DevRanker finds and ranks developers using their github code and activity",
 	"lint-staged": {
 		"src/**/*.+(js|jsx|ts|tsx|json|md)": [
 			"pnpm run lint:fix"
@@ -55,7 +55,6 @@
 		"axios": "1.6.7",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
-		"dev-ranker": "link:",
 		"framer-motion": "11.0.3",
 		"hashcode": "^1.0.3",
 		"lodash": "^4.17.21",

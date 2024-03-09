@@ -59,6 +59,9 @@ dependencies:
   dev-ranker:
     specifier: 'link:'
     version: 'link:'
+  devranker:
+    specifier: 'link:'
+    version: 'link:'
   framer-motion:
     specifier: 11.0.3
     version: 11.0.3(react-dom@18.2.0)(react@18.2.0)
