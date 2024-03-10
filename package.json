@@ -1,5 +1,5 @@
 {
-	"name": "devranker",
+	"name": "dev-ranker",
 	"version": "0.0.1",
 	"private": true,
 	"author": "DevRanker",
@@ -38,6 +38,7 @@
 		"prepare": "husky"
 	},
 	"dependencies": {
+		".\r": "link:.\r",
 		"@builder.io/partytown": "0.9.1",
 		"@chakra-ui/icons": "2.1.1",
 		"@chakra-ui/react": "2.8.2",
