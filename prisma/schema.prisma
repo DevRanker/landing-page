@@ -1,11 +1,6 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
+  output = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -13,12 +8,189 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model protocol_contributors_20240212_1 {
+	id Int @id @default(sequence()) @map("_id")
+  repo          String?
+  login         String?
+  github_id     BigInt?
+  node_id       String?
+  contributions BigInt?
+  type          String?
+  updated_at    BigInt?
+}
 
-model User{
-	id        String @id @default(uuid())
-	email     String @unique
-	name      String
-	password  String
-	createdAt DateTime @default(now())
-	updatedAt DateTime @updatedAt
+model protocol_engineers_emails_20240301 {
+	id Int @id @default(sequence()) @map("_id")
+  username            String?
+  email               String?
+  commit_email_counts Json?
+  updated_at          BigInt?
+}
+
+model protocol_engineers_user_info_20240229_2150 {
+	id Int @id @default(sequence()) @map("_id")
+  name                                String?
+  login                               String?
+  location                            String?
+  websiteUrl                          String?
+  bio                                 String?
+  company                             String?
+  socialAccounts                      Json?
+  repositories                        Json?
+  follower_count                      BigInt?
+  totalCommitContributions            BigInt?
+  totalPullRequestReviewContributions BigInt?
+  totalPullRequests                   BigInt?
+  totalOpenIssues                     BigInt?
+  totalClosedIssues                   BigInt?
+  totalRepositoriesContributedTo      BigInt?
+  unique_languages                    Json?
+  total_languages_sizes               Json?
+  location_details                    Json?
+  country_code                        String?
+  updated_at                          BigInt?
+}
+
+model protocol_engineers_user_info_20240301_1717 {
+	id Int @id @default(sequence()) @map("_id")
+
+  name                                String?
+  login                               String?
+  location                            String?
+  websiteUrl                          String?
+  bio                                 String?
+  company                             String?
+  socialAccounts                      Json?
+  repositories                        Json?
+  follower_count                      BigInt?
+  totalCommitContributions            BigInt?
+  totalPullRequestReviewContributions BigInt?
+  totalPullRequests                   BigInt?
+  totalOpenIssues                     BigInt?
+  totalClosedIssues                   BigInt?
+  totalRepositoriesContributedTo      BigInt?
+  unique_languages                    Json?
+  total_languages_sizes               Json?
+  location_details                    Json?
+  country_code                        String?
+  updated_at                          BigInt?
+}
+
+model repositoryDetails {
+	id								BigInt @id @default(autoincrement()) @map("github_id")
+
+  github_node_id    String?
+  github_name       String?
+  is_private        Boolean?
+  description       String?
+  is_fork           Boolean?
+  github_created_at String?
+  github_updated_at String?
+  github_pushed_at  String?
+  stargazers_count  BigInt?
+  language          String?
+  forks_count       BigInt?
+  mirror_url        String?
+  is_archived       Boolean?
+  is_disabled       Boolean?
+  open_issues_count BigInt?
+  github_topics     Json?
+  visibility        String?
+  default_branch    String?
+  network_count     BigInt?
+  subscribers_count BigInt?
+  owner_loging      String?
+  owner_id          BigInt?
+  owner_node_id     String?
+  owner_avatar_url  String?
+  owner_type        String?
+  updated_at        BigInt?
+
+  @@map("repository_details")
+}
+
+
+model repoContributors {
+  id            BigInt       @id @default(autoincrement())
+  repository    String
+  contributor   String
+  contributions BigInt?
+  created_at    BigInt       @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  updated_at    BigInt       @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  users         users        @relation(fields: [contributor], references: [username], onDelete: NoAction, onUpdate: NoAction)
+  repositories  repositories @relation(fields: [repository], references: [org_repository], onDelete: NoAction, onUpdate: NoAction)
+
+  @@map("repo_contributors")
+}
+
+model repositories {
+  id                                                               BigInt              @id @default(autoincrement())
+  org_repository                                                   String              @unique
+  manual_tags                                                      String[]
+  contributors_last_fetched_at                                     BigInt?
+  created_at                                                       BigInt              @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  updated_at                                                       BigInt              @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  github_id                                                        String?             @unique
+  github_node_id                                                   String?             @unique
+  github_name                                                      String?
+  is_private                                                       Boolean?            @default(false)
+  repository_owner                                                 String?
+  description                                                      String?
+  is_fork                                                          Boolean             @default(false)
+  github_created_at                                                String?
+  github_updated_at                                                String?
+  gitub_pushed_at                                                  String?
+  github_size                                                      BigInt?
+  stargazers_counts                                                BigInt?
+  github_language                                                  String?
+  forks_counts                                                     BigInt?
+  mirror_url                                                       String?
+  is_archived                                                      Boolean?            @default(false)
+  is_disabled                                                      Boolean?            @default(false)
+  open_issues_counts                                               BigInt?
+  github_topics                                                    String[]
+  visibility                                                       String?
+  default_branch                                                   String?
+  network_count                                                    BigInt?
+  subscribers_count                                                BigInt?
+  details_last_fetched_at                                          BigInt?
+  repo_contributors                                                repoContributors[]
+  repository_owner_repositories_repository_ownerTorepository_owner repositoryOwner?   @relation("repositories_repository_ownerTorepository_owner", fields: [repository_owner], references: [github_login], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model repositoryOwner {
+  id                                                           BigInt         @id @default(autoincrement())
+  github_login                                                 String         @unique
+  github_id                                                    String?        @unique
+  github_node_id                                               String?
+  github_avatar_url                                            String?
+  github_type                                                  String?
+  created_at                                                   BigInt         @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  updated_at                                                   BigInt         @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  repositories_repositories_repository_ownerTorepository_owner repositories[] @relation("repositories_repository_ownerTorepository_owner")
+
+  @@map("repository_owner")
+}
+
+model users {
+  id                         Int              @id
+  username                   String              @unique
+  display_name               String?
+  email_id                   String?
+  user_type                  String
+  github_website_url         String?
+  github_bio                 String?
+  github_social_accounts     String?
+  github_location            String?
+  location_country_code      String?
+  location_details           String?
+  github_user_id             String?
+  github_node_id             String?
+  github_bio_last_updated_at BigInt?
+  created_at                 BigInt              @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  updated_at                 BigInt              @default(dbgenerated("(extract('epoch'::STRING, now()) * 1000.0)::INT8"))
+  commit_email_counts        Json?
+  email_updated_at           BigInt?
+  profile_source             Json?
+  repo_contributors          repoContributors[]
 }

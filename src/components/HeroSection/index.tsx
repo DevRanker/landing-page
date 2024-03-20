@@ -24,44 +24,24 @@ const HeroSection = (props: Props) => {
 			});
 	};
 
-	// useEffect(() => {
-	// 	const queryFunction = async () => {
-	// 		const res = await fetch('/api/query');
-	// 		const data = await res.json();
-	// 		console.log(data);
-	// 	};
-
-	// 	const githubUsers = async () => {
-	// 		const res = await fetch('/api/githubUsers');
-	// 		const data = await res.json();
-	// 		console.log(data);
-	// 	};
-	// 	// queryFunction();
-	// 	githubUsers();
-	// }, [router.query.login]);
-
 	return (
 		<div className=" flex flex-col items-center gap-12 mt-40 w-[1284px] max-w-[1284px] overflow-x-hidden px-8">
-			<NextSeo
-				title="Home"
-				description="🦸‍♀️ A super template for Next.js with a pack of incredible tools"
-			/>
+			<NextSeo title="Home" description="High Precision Developer Hiring" />
 
 			{/* Hero section */}
 			<div className="flex flex-col items-center justify-center w-full gap-6 ">
 				<h1 className="font-black text-3xl  leading-[1.25] xs:text-4xl xs:leading-[1] sm:text-6xl md:text-7xl text-center flex flex-col">
-					<span>Indexing the Top 2% </span>
+					<span>Connecting </span>
 					{/* <br /> */}
-					<span className="">Devs in Web3</span>
+					<span className="">Best Developers</span>
 				</h1>
 				<h2 className="text-sm xs:text-xl lg:text-2xl font-normal opacity-50 max-w-[520px] text-center">
-					The right developer recognized with zero-effort
+					Using relevant code contributions for outreach
 				</h2>
 			</div>
 
 			{/* Blurred blob */}
 			<div className="absolute w-56 h-56 bg-purple-600 -top-10 -left-12 blur-[140px] rounded-full "></div>
-			<div className="absolute w-56 h-56 bg-purple-600 top-[23%] -right-32 blur-[140px] rounded-full "></div>
 
 			{/* CTA */}
 			<div className="flex items-center gap-8">
@@ -71,9 +51,9 @@ const HeroSection = (props: Props) => {
 					</div>
 					<span>
 						<h4 className="text-3xl font-bold text-center">
-							<CountUp start={0} end={9756} /> <span className="">+</span>
+							<CountUp start={0} end={17486} duration={2} /> <span className="">+</span>
 						</h4>
-						<h3 className="opacity-85"> Web3 Developers Indexed</h3>
+						<h3 className="opacity-85"> Developers Indexed</h3>
 					</span>
 				</div>
 			</div>
