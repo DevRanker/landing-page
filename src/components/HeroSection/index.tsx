@@ -51,7 +51,7 @@ const HeroSection = (props: Props) => {
 					</div>
 					<span>
 						<h4 className="text-3xl font-bold text-center">
-							<CountUp start={0} end={17486} duration={2} /> <span className="">+</span>
+							<CountUp start={17486} end={3213055} duration={2} /> <span className="">+</span>
 						</h4>
 						<h3 className="opacity-85"> Developers Indexed</h3>
 					</span>
